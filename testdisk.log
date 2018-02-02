@@ -1,0 +1,49 @@
+
+
+Sat Feb  3 11:27:14 2018
+Command line: TestDisk
+
+TestDisk 6.14, Data Recovery Utility, July 2013
+Christophe GRENIER <grenier@cgsecurity.org>
+http://www.cgsecurity.org
+OS: Linux, kernel 3.19.0-25-generic (#26~14.04.1-Ubuntu SMP Fri Jul 24 21:18:00 UTC 2015) i686
+Compiler: GCC 4.8
+Compilation date: 2013-10-29T01:29:29
+ext2fs lib: 1.42.9, ntfs lib: libntfs-3g, reiserfs lib: none, ewf lib: none
+/dev/sda: LBA, LBA48 support
+/dev/sda: size       104857600 sectors
+/dev/sda: user_max   104857600 sectors
+Warning: can't get size for Disk /dev/mapper/control - 0 B - 1 sectors, sector size=512
+Hard disk list
+Disk /dev/sda - 53 GB / 50 GiB - CHS 6527 255 63, sector size=512 - VBOX HARDDISK, S/N:VBf7d6bc70-d068d67f, FW:1.0
+
+Partition table type (auto): Intel
+Disk /dev/sda - 53 GB / 50 GiB - VBOX HARDDISK
+Partition table type: EFI GPT
+
+Interface Advanced
+Bad GPT partition, invalid signature.
+Trying alternate GPT
+Bad GPT partition, invalid signature.
+
+Analyse Disk /dev/sda - 53 GB / 50 GiB - CHS 6527 255 63
+Bad GPT partition, invalid signature.
+Trying alternate GPT
+Bad GPT partition, invalid signature.
+Current partition structure:
+Bad GPT partition, invalid signature.
+Trying alternate GPT
+Bad GPT partition, invalid signature.
+
+search_part()
+Disk /dev/sda - 53 GB / 50 GiB - CHS 6527 255 63
+
+recover_EXT2: s_block_group_nr=0/383, s_mnt_count=52/4294967295, s_blocks_per_group=32768, s_inodes_per_group=8192
+recover_EXT2: s_blocksize=4096
+recover_EXT2: s_blocks_count 12582656
+recover_EXT2: part_size 100661248
+     MS Data                     2048  100663295  100661248
+     ext4 blocksize=4096 Large file Sparse superblock Recover, 51 GB / 47 GiB
+     Linux Swap             100665336  100665351         16
+     SWAP2 version 0, pagesize=8192, 8192 B
+SIGINT detected! TestDisk has been killed.

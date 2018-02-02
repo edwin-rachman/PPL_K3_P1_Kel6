@@ -29,7 +29,8 @@
         "magento/module-review-sample-data": "100.1.*",
         "magento/module-swatches-sample-data": "100.1.*",
         "magento/sample-data-media": "100.1.*",
-        "magento/module-offline-shipping-sample-data": "100.1.*"
+        "magento/module-offline-shipping-sample-data": "100.1.*",
+        "plumrocket/module-psloginfree": "^2.1"
     },
     "require-dev": {
         "phpunit/phpunit": "4.1.0",
@@ -67,12 +68,16 @@
     },
     "minimum-stability": "alpha",
     "prefer-stable": true,
-    "repositories": [
-        {
+    "repositories": {
+        "0": {
             "type": "composer",
             "url": "https://repo.magento.com/"
+        },
+        "plumrocket": {
+            "type": "composer",
+            "url": "https://store.plumrocket.com/repo/"
         }
-    ],
+    },
     "extra": {
         "magento-force": "override"
     }

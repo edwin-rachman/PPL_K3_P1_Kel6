@@ -1,4 +1,13 @@
-require([
+define([
+    "jquery"
+], function($){
+        "use strict";
+        return function(config, element) {
+            alert(config.message);
+        }
+    }
+)
+/*require([
     'jquery',
     'underscore',
     'jquery/jquery-storageapi'
@@ -40,11 +49,13 @@ require([
                 //$('body').trigger('productAdded', [{items:addedItems}]);
                 console.log('item added');
             }
-            /*if (_.size(removedItems) > 0) {
-                $('body').trigger('productRemoved', [{items:removedItems}]);
-            }*/
+            //if (_.size(removedItems) > 0) {
+            //    $('body').trigger('productRemoved', [{items:removedItems}]);
+            //}
 
             storage.set('iwd-old-cart', newCart);
         }
     });
 });
+
+*/

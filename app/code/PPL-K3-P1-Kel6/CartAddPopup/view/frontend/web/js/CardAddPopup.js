@@ -1,11 +1,11 @@
 define([
-    "jquery"
+  'jquery'
 ], function($){
-        "use strict";
-        return function(config, element) {
-            alert(config.message);
-        }
+    'use strict';
+    return function(config, element) {
+        alert(config.message);
     }
+  }
 )
 /*require([
     'jquery',

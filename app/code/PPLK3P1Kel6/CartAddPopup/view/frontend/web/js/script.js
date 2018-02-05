@@ -1,20 +1,12 @@
-define([
-  'jquery'
-], function($){
-    'use strict';
-    return function(config, element) {
-        alert(config.message);
-    }
-  }
-)
-/*require([
+require([
     'jquery',
     'underscore',
+    'Magento_Ui/js/modal/alert',
     'jquery/jquery-storageapi'
-], function($, _) {
+], function($, _, alert) {
     var storage = $.initNamespaceStorage('mage-cache-storage').localStorage;
 
-    $(document).on('ajaxComplete', function (event, xhr, settings) {
+    $(document).ajaxComplete(function (event, xhr, settings) {
         if (settings.url.match(/customer\/section\/load/i) && xhr.responseJSON && xhr.responseJSON.cart) {
             var addedItems = {};
             var removedItems = {};
@@ -46,8 +38,15 @@ define([
             $.each(oldCartItems, function(id, item){removedItems[id] = item;});
 
             if (_.size(addedItems) > 0) {
-                //$('body').trigger('productAdded', [{items:addedItems}]);
-                console.log('item added');
+              contentString = ""
+              $.each(addedItems, function(id, item) {
+                contentString += 'Product name: ' + item.product_name + '\nPrice: ' + item.product_price_value + '\Quantity: \n\n' + item.qty;
+              });
+              
+              alert({
+                title: 'Product added to cart',
+                content: contentString
+              });
             }
             //if (_.size(removedItems) > 0) {
             //    $('body').trigger('productRemoved', [{items:removedItems}]);
@@ -57,5 +56,3 @@ define([
         }
     });
 });
-
-*/

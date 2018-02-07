@@ -4,8 +4,6 @@ require([
     'Magento_Ui/js/modal/alert',
     'jquery/jquery-storageapi'
 ], function($, _, alert) {
-    var storage = $.initNamespaceStorage('mage-cache-storage').localStorage;
-
     $(document).ajaxComplete(function (event, xhr, settings) {
         if (settings.url.match(/customer\/section\/load/i) && xhr.responseJSON && xhr.responseJSON.cart) {
             var addedItems = {};
@@ -38,14 +36,11 @@ require([
             $.each(oldCartItems, function(id, item){removedItems[id] = item;});
 
             if (_.size(addedItems) > 0) {
-              contentString = ""
               $.each(addedItems, function(id, item) {
-                contentString += 'Product name: ' + item.product_name + '\nPrice: ' + item.product_price_value + '\Quantity: \n\n' + item.qty;
-              });
-              
-              alert({
-                title: 'Product added to cart',
-                content: contentString
+                alert({
+                  title: 'Product added to cart',
+                  content: 'Added product: ' + item.product_name + ' (Price: $' + item.product_price_value + ')'
+                });
               });
             }
             //if (_.size(removedItems) > 0) {

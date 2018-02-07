@@ -4,6 +4,8 @@ require([
     'Magento_Ui/js/modal/alert',
     'jquery/jquery-storageapi'
 ], function($, _, alert) {
+    var storage = $.initNamespaceStorage('mage-cache-storage').localStorage;
+  
     $(document).ajaxComplete(function (event, xhr, settings) {
         if (settings.url.match(/customer\/section\/load/i) && xhr.responseJSON && xhr.responseJSON.cart) {
             var addedItems = {};

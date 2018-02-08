@@ -5,16 +5,17 @@ require([
     'jquery/jquery-storageapi'
 ], function($, _, alertWidget) {
   var storage = $.initNamespaceStorage('mage-cache-storage').localStorage;
+  var cartLimit = storage.get('cart-limit');
+  cartLimit = (typeof cartLimit === 'undefined' || cartLimit === null) ? Infinity : cartLimit;
+  $('.minicart-wrapper').prepend($('<button/>').text('Max limit: $' + cartLimit).click(function() {}));
   
   $(document).ajaxComplete(function (event, xhr, settings) {
     if (settings.url.match(/customer\/section\/load/i) && xhr.responseJSON && xhr.responseJSON.cart) {
       var addedItems = {};
       var newCart = xhr.responseJSON.cart;
       var oldCart = storage.get('old-cart');
-      var cartLimit = storage.get('cart-limit');
       oldCart = (typeof oldCart === 'undefined') ? {'items':[]} : oldCart;
-      cartLimit = (typeof cartLimit === 'undefined') ? Infinity : cartLimit;
-
+      
       var oldCartItems = {};
       $.each(oldCart.items, function(){oldCartItems[this.item_id] = this;});
 

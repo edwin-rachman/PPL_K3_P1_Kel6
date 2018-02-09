@@ -30,7 +30,8 @@
         "magento/module-swatches-sample-data": "100.1.*",
         "magento/sample-data-media": "100.1.*",
         "magento/module-offline-shipping-sample-data": "100.1.*",
-        "plumrocket/module-psloginfree": "^2.1"
+        "plumrocket/module-psloginfree": "^2.1",
+        "mageplaza/magento-2-product-slider": "^1.2"
     },
     "require-dev": {
         "phpunit/phpunit": "4.1.0",

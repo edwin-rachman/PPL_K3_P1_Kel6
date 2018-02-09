@@ -9,7 +9,8 @@ require([
   var cartLimit = storage.get('cart-limit');
   cartLimit = (typeof cartLimit === 'undefined' || cartLimit === null) ? Infinity : cartLimit;
   
-  $('.showcart').before($('<button/>').text(cartLimit === Infinity ? 'No max limit' : ('Max limit: $' + cartLimit)).click(function() {
+  $('.showcart').before($('<button/>').text(cartLimit === Infinity ? 'No max limit' : ('Max limit: $' + cartLimit))
+  .click(function() {
     var $this = $(this);
     promptWidget({
       title: 'Set maximum cart total limit',
